@@ -2,6 +2,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:untitled1/constant.dart';
 import 'package:untitled1/layout/cubit/App-state.dart';
 import 'package:untitled1/shared/style/icon-Broken.dart';
@@ -27,7 +28,8 @@ class HomeScreen extends StatelessWidget {
               actions: [
                 Padding(
                   padding: const EdgeInsets.all(20.0),
-                  child: Icon(IconBroken.Logout , size: 30,),
+                  child:
+                  Icon(IconBroken.Logout , size: 30,),
                 )
               ],
             ),
