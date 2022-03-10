@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:untitled1/constant.dart';
 class NotifyScreen extends StatefulWidget {
@@ -20,6 +21,7 @@ class _NotifyScreenState extends State<NotifyScreen> {
       child: Scaffold(
         body:SingleChildScrollView(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
                 Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 30.0 , vertical: 30),
@@ -68,6 +70,7 @@ class _NotifyScreenState extends State<NotifyScreen> {
                                 append = false ;
                                 accep = true ;
                                 cancel = false ;
+
                               });
 
                             }, child: Text('Accepted',
@@ -100,150 +103,228 @@ class _NotifyScreenState extends State<NotifyScreen> {
                 ),
               ),
 
-            /*  Padding(
-                padding: const EdgeInsets.symmetric(vertical: 40.0 , horizontal:  30.0),
+
+             Text( """    Today """ , style: TextStyle(fontWeight: FontWeight.bold , color: defColor),),
+
+          if( append == true ) Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 15.0),
                 child: Container(
-                  height: 60 ,
-                  clipBehavior: Clip.antiAliasWithSaveLayer,
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      color: btnColor,
-                      width: 2.0,
-                    ),
-                   borderRadius: BorderRadius.circular(50)),
-                  child:
-                  AppBar(
-                    //backgroundColor: Colors.white,
-                    backgroundColor: Colors.green,
+                  height: 130,
+                  child: Card(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10.0 , vertical: 15 ),
+                      child: Row(
+                        children: [
+                          CircleAvatar(
+                              radius: 27,
+                              backgroundImage:
+                              NetworkImage('https://us.123rf.com/450wm/mimagephotography/mimagephotography1602/mimagephotography160200833/53356511-close-up-portrait-of-a-smiling-young-african-american-man-in-a-denim-shirt-against-white-background.jpg')),
 
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(50),
-                    ),
+                          SizedBox(width : 15,),
 
-                    bottom: TabBar(
-                      tabs: [
-                           Container(
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              SizedBox(height: 10,),
+                              Row(
+                                children: [
+                                  Text('John Deo' ,
+                                    style: TextStyle(color: defColor , fontWeight: FontWeight.bold),),
+                                  Text("" ' Has Applied On '"" , maxLines: 2,),
+                                ],
+                              ),
+                              Text('Business Innovation Event' ),
 
-                               height: 54,
-                               decoration: BoxDecoration(
-                                color:  btnColor ,
-                                borderRadius: BorderRadius.circular(50)
+                              SizedBox(height: 15,),
 
-                               ),
-                             child: Tab( child: Text('Appended' , maxLines: 1 ,) , ) ,),
+                              Row(children: [
+                                Text('Status : '),
+                                Text('Pending ' , style: TextStyle(color: btnColor , fontWeight: FontWeight.w600),),
+                                SizedBox(width: 80,),
+                                Text('2h')
 
-                          Container(
-                            height: 54,
-                            decoration: BoxDecoration(
-                                color:  btnColor ,
-                                borderRadius: BorderRadius.circular(50)
-                            ),
-                            child: Tab( child: Text('Accepted' , maxLines: 1,) )),
-
-                        Container(
-                          height: 54,
-                            decoration: BoxDecoration(
-                                color:  btnColor ,
-                                borderRadius: BorderRadius.circular(50)
-                            ),
-                            child: Tab( child: Text('Canclled' , maxLines: 1, ) )),
-                      ],
+                              ],)
+                            ],
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ),
-              ),
+              ) ,
+              if( accep == true ) Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                child: Container(
+                  height: 130,
+                  child: Card(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10.0 , vertical: 15 ),
+                      child: Row(
+                        children: [
+                          CircleAvatar(
+                              radius: 27,
+                              backgroundImage:
+                              NetworkImage('https://us.123rf.com/450wm/mimagephotography/mimagephotography1602/mimagephotography160200833/53356511-close-up-portrait-of-a-smiling-young-african-american-man-in-a-denim-shirt-against-white-background.jpg')),
 
-              SizedBox(height: 30,),
+                          SizedBox(width : 15,),
+
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              SizedBox(height: 10,),
+                              Row(
+                                children: [
+                                  Text('John Deo' ,
+                                    style: TextStyle(color: defColor , fontWeight: FontWeight.bold),),
+                                  Text("" ' Has Applied On '"" , maxLines: 2,),
+                                ],
+                              ),
+                              Text('Business Innovation Event' ),
+
+                              SizedBox(height: 15,),
+
+                              Row(children: [
+                                Text('Status : '),
+                                Text('Accepted ' , style: TextStyle(color: Colors.green , fontWeight: FontWeight.w600),),
+                                SizedBox(width: 80,),
+                                Text('2h')
+
+                              ],)
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ) ,
+              if( cancel == true ) Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                child: Container(
+                  height: 130,
+                  child: Card(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10.0 , vertical: 15 ),
+                      child: Row(
+                        children: [
+                          CircleAvatar(
+                              radius: 27,
+                              backgroundImage:
+                              NetworkImage('https://us.123rf.com/450wm/mimagephotography/mimagephotography1602/mimagephotography160200833/53356511-close-up-portrait-of-a-smiling-young-african-american-man-in-a-denim-shirt-against-white-background.jpg')),
+
+                          SizedBox(width : 15,),
+
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              SizedBox(height: 10,),
+                              Row(
+                                children: [
+                                  Text('John Deo' ,
+                                    style: TextStyle(color: defColor , fontWeight: FontWeight.bold),),
+                                  Text("" ' Has Applied On '"" , maxLines: 2,),
+                                ],
+                              ),
+                              Text('Business Innovation Event' ),
+
+                              SizedBox(height: 15,),
+
+                              Row(children: [
+                                Text('Status : '),
+                                Text('Canclled ' , style: TextStyle(color: Colors.red , fontWeight: FontWeight.w600),),
+                                SizedBox(width: 80,),
+                                Text('2h')
+
+                              ],)
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ) ,
+
+              SizedBox(height: 15,),
 
               Container(
-                height: 100,
-                child: TabBarView(
-                    children: [
+                height: 120,
+                child: ListView.separated(
+                  shrinkWrap: true,
+                    physics: NeverScrollableScrollPhysics(),
+                    itemBuilder: (context , index) {
+                    if(accep == true) { return itemAccepted() ;}
+                      else if (cancel == true) { return itemCancelled() ;}
+                      else
+                      return item();
+                    },
+                    separatorBuilder: (context , index)=> SizedBox(height: 15,),
+                    itemCount: 2),
+              ),
 
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                        child: Card(
-                          elevation: 5,
-                          child: Row(
-                            children: [
-                              CircleAvatar(
-                                radius: 24,
-                                backgroundColor: Colors.orange,
-                              ) ,
-                              Column(
-                                children: [
-                                  Text('john Deo')
-                                ],
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
+              SizedBox(height: 15,),
+              Text( """    Yesterday """ , style: TextStyle(fontWeight: FontWeight.bold , color: defColor),),
 
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                        child: Card(
-                          elevation: 5,
-
-                          child: Row(
-                            children: [
-                              CircleAvatar(
-                                radius: 24,
-                                backgroundColor: Colors.orange,
-                              ) ,
-                              Column(
-                                children: [
-                                  Text('john Deo')
-                                ],
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                        child: Card(
-                          elevation: 5,
-                          child: Row(
-                            children: [
-                              CircleAvatar(
-                                radius: 24,
-                                backgroundColor: Colors.orange,
-                              ) ,
-                              Column(
-                                children: [
-                                  Text('john Deo')
-                                ],
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-
-                ]
-                ),
-              ),*/
-
-             Padding(
-               padding: const EdgeInsets.symmetric(horizontal: 15.0),
-               child: Card(
-                  child: Row(
-                    children: [
-                      CircleAvatar(
-                        radius: 24,
-                        backgroundColor: Colors.orange,
-                      ) ,
-                      Column(
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                child: Container(
+                  height: 130,
+                  child: Card(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10.0 , vertical: 15 ),
+                      child: Row(
                         children: [
-                          Text('john Deo')
+                          CircleAvatar(
+                              radius: 27,
+                              backgroundImage:
+                              NetworkImage('https://us.123rf.com/450wm/mimagephotography/mimagephotography1602/mimagephotography160200833/53356511-close-up-portrait-of-a-smiling-young-african-american-man-in-a-denim-shirt-against-white-background.jpg')),
+
+                          SizedBox(width : 15,),
+
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              SizedBox(height: 10,),
+                              Row(
+                                children: [
+                                  Text('John Deo' ,
+                                    style: TextStyle(color: defColor , fontWeight: FontWeight.bold),),
+                                  Text("" ' Has Applied On '"" , maxLines: 2,),
+                                ],
+                              ),
+                              Text('Business Innovation Event' ),
+
+                              SizedBox(height: 15,),
+
+                              Row(children: [
+                                Text('Status : '),
+                                Text('Pending ' , style: TextStyle(color: btnColor , fontWeight: FontWeight.w600),),
+                                SizedBox(width: 80,),
+                                Text('2h')
+
+                              ],)
+                            ],
+                          )
                         ],
-                      )
-                    ],
+                      ),
+                    ),
                   ),
                 ),
-             ),
+              ) ,
+              SizedBox(height: 15,),
 
+              Container(
+                height: 120,
+                child: ListView.separated(
+                    itemBuilder: (context , index) {
+                      if(accep == true) { return itemAccepted() ;}
+                      else if (cancel == true) { return itemCancelled() ;}
+                      else
+                        return item();
+                    },
+                    separatorBuilder: (context , index)=> SizedBox(height: 15,),
+                    itemCount: 2),
+              ),
 
             ],
           ),
@@ -342,5 +423,148 @@ class _NotifyScreenState extends State<NotifyScreen> {
       ],
     ),
   ) ;*/
-  Widget Pended()=> Text('11');
+
+  Widget item() => Padding(
+  padding: const EdgeInsets.symmetric(horizontal: 15.0),
+  child: Container(
+  height: 130,
+  child: Card(
+  child: Padding(
+  padding: const EdgeInsets.symmetric(horizontal: 10.0 , vertical: 15 ),
+  child: Row(
+  children: [
+  CircleAvatar(
+  radius: 27,
+  backgroundImage:
+  NetworkImage('https://us.123rf.com/450wm/luismolinero/luismolinero1909/luismolinero190917934/130592146-handsome-young-man-in-pink-shirt-over-isolated-blue-background-keeping-the-arms-crossed-in-frontal-p.jpg')),
+
+  SizedBox(width : 15,),
+
+  Column(
+  crossAxisAlignment: CrossAxisAlignment.start,
+  children: [
+  SizedBox(height: 10,),
+  Row(
+  children: [
+  Text('John Deo' ,
+  style: TextStyle(color: defColor , fontWeight: FontWeight.bold),),
+  Text("" ' Has Applied On '"" , maxLines: 2,),
+  ],
+  ),
+  Text('Business Innovation Event' ),
+
+  SizedBox(height: 15,),
+
+  Row(children: [
+  Text('Status : '),
+  Text('Pending ' , style: TextStyle(color: btnColor , fontWeight: FontWeight.w600),),
+  SizedBox(width: 80,),
+  Text('2h')
+
+  ],)
+  ],
+  )
+  ],
+  ),
+  ),
+  ),
+  ),
+  ) ;
+
+
+  Widget itemAccepted() => Padding(
+    padding: const EdgeInsets.symmetric(horizontal: 15.0),
+    child: Container(
+      height: 130,
+      child: Card(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10.0 , vertical: 15 ),
+          child: Row(
+            children: [
+              CircleAvatar(
+                  radius: 27,
+                  backgroundImage:
+                  NetworkImage('https://us.123rf.com/450wm/luismolinero/luismolinero1909/luismolinero190917934/130592146-handsome-young-man-in-pink-shirt-over-isolated-blue-background-keeping-the-arms-crossed-in-frontal-p.jpg')),
+
+              SizedBox(width : 15,),
+
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(height: 10,),
+                  Row(
+                    children: [
+                      Text('John Deo' ,
+                        style: TextStyle(color: defColor , fontWeight: FontWeight.bold),),
+                      Text("" ' Has Applied On '"" , maxLines: 2,),
+                    ],
+                  ),
+                  Text('Business Innovation Event' ),
+
+                  SizedBox(height: 15,),
+
+                  Row(children: [
+                    Text('Status : '),
+                    Text('Accepted ' , style: TextStyle(color: Colors.green , fontWeight: FontWeight.w600),),
+                    SizedBox(width: 80,),
+                    Text('2h')
+
+                  ],)
+                ],
+              )
+            ],
+          ),
+        ),
+      ),
+    ),
+  ) ;
+
+  Widget itemCancelled() => Padding(
+    padding: const EdgeInsets.symmetric(horizontal: 15.0),
+    child: Container(
+      height: 130,
+      child: Card(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10.0 , vertical: 15 ),
+          child: Row(
+            children: [
+              CircleAvatar(
+                  radius: 27,
+                  backgroundImage:
+                  NetworkImage('https://us.123rf.com/450wm/luismolinero/luismolinero1909/luismolinero190917934/130592146-handsome-young-man-in-pink-shirt-over-isolated-blue-background-keeping-the-arms-crossed-in-frontal-p.jpg')),
+
+              SizedBox(width : 15,),
+
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(height: 10,),
+                  Row(
+                    children: [
+                      Text('John Deo' ,
+                        style: TextStyle(color: defColor , fontWeight: FontWeight.bold),),
+                      Text("" ' Has Applied On '"" , maxLines: 2,),
+                    ],
+                  ),
+                  Text('Business Innovation Event' ),
+
+                  SizedBox(height: 15,),
+
+                  Row(children: [
+                    Text('Status : '),
+                    Text('Cancelled ' , style: TextStyle(color: Colors.red , fontWeight: FontWeight.w600),),
+                    SizedBox(width: 80,),
+                    Text('2h')
+
+                  ],)
+                ],
+              )
+            ],
+          ),
+        ),
+      ),
+    ),
+  ) ;
+
+
 }

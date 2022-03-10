@@ -4,12 +4,33 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:untitled1/constant.dart';
 import 'package:untitled1/model/imageModel.dart';
 import 'package:untitled1/shared/style/icon-Broken.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
   @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+
+  @override
   Widget build(BuildContext context) {
+
+    Set<Marker> _marker ={} ;
+    late GoogleMapController _controller ;
+    LatLng  _position = LatLng(31.041455,31.4178593);
+
+    addMarker()
+    {
+      _marker.add(
+          Marker(markerId: MarkerId('mId'),
+              infoWindow:
+              InfoWindow(title: 'xx' , snippet: 'yy'),
+              position: _position ));
+    }
+
     List<ImageModel> imgs = [
       ImageModel(image: 'https://img.freepik.com/free-photo/beautiful-wide-shot-eiffel-tower-paris-surrounded-by-water-with-ships-colorful-sky_181624-5118.jpg?size=626&ext=jpg&ga=GA1.2.366265905.1646643516', imgName: 'Festival', imgSubName: 'Kornish Jeddh', month: 'Feb', day: '06'),
       ImageModel(image: 'https://img.freepik.com/free-photo/view-downtown-raleigh-north-carolina-from-street-level-hdr-image_1127-3128.jpg?size=626&ext=jpg&ga=GA1.2.366265905.1646643516', imgName: 'Festival', imgSubName: 'Kornish Jeddh', month: 'Feb', day: '06'),
@@ -34,6 +55,7 @@ class HomePage extends StatelessWidget {
       '9.png' ,
     ] ;
 
+    addMarker() ;
     return Scaffold(
       body: SingleChildScrollView(
         physics: BouncingScrollPhysics(),
@@ -319,7 +341,90 @@ class HomePage extends StatelessWidget {
 
 
                 ],
+              ) ,
+
+              SizedBox(height: 20,),
+              Padding(
+                padding: const EdgeInsets.only(left: 10.0),
+                child: Text('Location' , style: TextStyle(color: defColor , fontWeight: FontWeight.bold),),
+              ),
+
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 15.0 , horizontal: 20),
+                child: Container(
+                  clipBehavior: Clip.antiAlias,
+                  height: 250,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    border: Border.all(
+                        color: Colors.white,
+                        width: 2,
+                    ),
+                  ),
+                  child: GoogleMap(initialCameraPosition: CameraPosition(
+                    target:_position ,
+                    zoom: 11.0 ,
+
+                  ),
+                  mapType: MapType.normal,
+                    markers: _marker ,
+                    onMapCreated: (controller){
+                     _controller = controller ;
+
+                    },
+                  ),
+                ),
+              ),
+
+              SizedBox(height: 20,),
+              Padding(
+                padding: const EdgeInsets.only(left: 10.0),
+                child: Text('Venue' , style: TextStyle(color: defColor , fontWeight: FontWeight.bold),),
+              ),
+
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20.0 , vertical: 20),
+                child: Container(
+                  decoration: BoxDecoration(
+                      color: btnColor,
+                      borderRadius: BorderRadius.circular(10)
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 15.0),
+                    child: Column(children:
+                    [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                        child: Row(children: [
+                          Icon(Icons.add_location_sharp , color: Colors.white, size: 28,),
+                          SizedBox(width: 10,),
+                          Text('Block 15' , style: TextStyle(color: Colors.white , fontWeight: FontWeight.bold),)
+                        ],),
+                      ),
+                      SizedBox(height: 20,),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                        child: Row(children: [
+                          Icon(Icons.phone , color: Colors.white, size: 28,),
+                          SizedBox(width: 10,),
+                          Text('050874231' , style: TextStyle(color: Colors.white , fontWeight: FontWeight.bold),)
+                        ],),
+                      ),
+                      SizedBox(height: 20,),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                        child: Row(children: [
+                          Icon(Icons.mail , color: Colors.white, size: 28,),
+                          SizedBox(width: 10,),
+                          Text('xx@gmail.com' , style: TextStyle(color: Colors.white , fontWeight: FontWeight.bold),)
+                        ],),
+                      ),
+
+                    ],),
+                  ),
+                ),
               )
+
 
 
             ],

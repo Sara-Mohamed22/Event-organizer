@@ -38,6 +38,7 @@ dependencies:
   bloc: ^7.2.1
   flutter_bloc: ^7.3.1
   font_awesome_flutter: ^9.0.0-nullsafety
+  google_maps_flutter: ^2.1.0
 
 dev_dependencies:
   flutter_test:
