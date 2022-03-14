@@ -358,7 +358,7 @@ class _HomePageState extends State<HomePage> {
                 ],
               ) ,
 
-              SizedBox(height: 20,),
+            /*  SizedBox(height: 20,),
               Padding(
                 padding: const EdgeInsets.only(left: 10.0),
                 child: Text('Location' , style: TextStyle(color: defColor , fontWeight: FontWeight.bold),),
@@ -438,7 +438,7 @@ class _HomePageState extends State<HomePage> {
                     ],),
                   ),
                 ),
-              )
+              )*/
 
 
 

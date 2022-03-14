@@ -1,4 +1,5 @@
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:untitled1/constant.dart';
 
@@ -314,13 +315,86 @@ class TicketTypeScreen extends StatelessWidget {
               ),
             ),
 
-            Column(children: [
-              Row(
-                children: [
-                  Text('Date')
-                ],
-              )
-            ],),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 35.0),
+
+              child: Column(children: [
+
+                SizedBox(height: 10,),
+                Row(
+                  children: [
+                    Text('Date : ' ,
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold ,
+                          color: btnColor ,
+                          fontSize: 16),),
+                    SizedBox(width: 50,),
+                    Text('15 MAY ' ,style: TextStyle(
+                        fontWeight: FontWeight.w600 ,
+                        color: defColor ,
+                        fontSize: 16),),
+                  ],
+                ),
+                SizedBox(height: 20,),
+                Row(
+                  children: [
+                    Text('Time : ' ,
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold ,
+                          color: btnColor ,
+                          fontSize: 16),),
+                    SizedBox(width: 50,),
+                    Text('11:03 ' ,style: TextStyle(
+                        fontWeight: FontWeight.w600 ,
+                        color: defColor ,
+                        fontSize: 16),),
+                  ],
+                ),
+                SizedBox(height: 20,),
+
+                Row(
+                  children: [
+                    Text('Price : ' ,
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold ,
+                          color: btnColor ,
+                          fontSize: 16),),
+                    SizedBox(width: 50,),
+                    Text('\$150 ' ,style: TextStyle(
+                        fontWeight: FontWeight.w600 ,
+                        color: defColor ,
+                        fontSize: 16),),
+                  ],
+                ),
+                SizedBox(height: 20,),
+
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('Describtion : ' ,
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold ,
+                          color: btnColor ,
+                          fontSize: 16),),
+                    SizedBox(width: 5,),
+                    Expanded(
+                     child:
+                      Text('But I must explain to explain to you how all this mistaken idea of'
+                          'denouncing pleasure and praising pain was born and i '
+                          'will give you a complete account of the system '
+                          '\n'
+                          'And expound the actual teachings of the great explorer of the truth ' ,maxLines: 5,style: TextStyle(
+                          fontWeight: FontWeight.w600 ,
+                          color: Colors.grey ,
+                          fontSize: 16),),
+                    ),
+                  ],
+                ),
+
+                SizedBox(height: 50,),
+
+              ],),
+            ),
 
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
@@ -342,7 +416,7 @@ class TicketTypeScreen extends StatelessWidget {
                               children: [
                                 Padding(
                                   padding: const EdgeInsets.symmetric(horizontal: 3.0),
-                                  child: Text('\$200' ,
+                                  child: Text('Free' ,
                                     style: TextStyle(color: Colors.white , fontWeight: FontWeight.bold ),),
                                 ),
 
@@ -371,13 +445,13 @@ class TicketTypeScreen extends StatelessWidget {
 
                                   ],
                                 ),
-                                SizedBox(width: 49,),
+                                SizedBox(width: 50,),
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Text('Business Revolution', style: TextStyle(color: Colors.white , fontWeight: FontWeight.bold),),
-                                    /* Text('Mass Development', style: TextStyle(color: Colors.white ,
-                                        fontWeight: FontWeight.bold),)*/
+                                    Text('Code Clouders', style: TextStyle(color: Colors.white , fontWeight: FontWeight.bold),),
+                                     Text('Mass Development', style: TextStyle(color: Colors.white ,
+                                        fontWeight: FontWeight.bold),)
 
                                   ],)
                               ],

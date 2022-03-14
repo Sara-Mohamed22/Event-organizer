@@ -31,7 +31,10 @@ class _InvitationDetailState extends State<InvitationDetail> {
   double _volume = 100;
   bool _muted = false;
 
-  String videoURL = "https://www.youtube.com/watch?v=9_tZFByeaxA";
+  String day = 'Day 01' ;
+
+  //String videoURL = "https://www.youtube.com/watch?v=9_tZFByeaxA";
+  String videoURL = "https://www.youtube.com/watch?v=gnAsLyGzh_4" ;
 
   // final List<String> _ids2 = [
   //   't0Q2otsqC4I',
@@ -477,16 +480,23 @@ class _InvitationDetailState extends State<InvitationDetail> {
                               physics: NeverScrollableScrollPhysics(),
                               itemCount: agenda.length,
                               itemBuilder: (context, index) =>
-                                  Container(
-                                    width: 80,
-                                    height: 30,
-                                    decoration: BoxDecoration(
-                                      color: agenda[index]== agenda.first ? btnColor : HexColor('#FBFBFB'),
-                                      borderRadius: BorderRadius.circular(10)
-                                    ),
-                                    child: Center(child: Text('${agenda[index]}' , style: TextStyle(color: agenda[index]== agenda.first  ? Colors.white : Colors.grey )))
+                                  InkWell(
+                                    onTap: (){
+                                      print('day');
+                                    },
+                                    child: Container(
+                                      width: 80,
+                                      height: 30,
+                                      decoration: BoxDecoration(
+                                        color: agenda[index]== agenda.first ? btnColor : HexColor('#FBFBFB'),
+                                        borderRadius: BorderRadius.circular(10)
+                                      ),
+                                      child: Center(child: Text('${agenda[index]}' ,
+                                          style: TextStyle(
+                                              color: agenda[index]== agenda.first  ? Colors.white : Colors.grey )))
 
-                                    ),
+                                      ),
+                                  ),
                               separatorBuilder: (context, index) =>
                                   SizedBox(width: 20,),
                             ),
