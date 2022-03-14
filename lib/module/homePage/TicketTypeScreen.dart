@@ -315,6 +315,7 @@ class TicketTypeScreen extends StatelessWidget {
               ),
             ),
 
+<<<<<<< HEAD
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 35.0),
 
@@ -395,6 +396,15 @@ class TicketTypeScreen extends StatelessWidget {
 
               ],),
             ),
+=======
+            Column(children: [
+              Row(
+                children: [
+                  Text('Date')
+                ],
+              )
+            ],),
+>>>>>>> origin/event
 
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
@@ -416,7 +426,11 @@ class TicketTypeScreen extends StatelessWidget {
                               children: [
                                 Padding(
                                   padding: const EdgeInsets.symmetric(horizontal: 3.0),
+<<<<<<< HEAD
                                   child: Text('Free' ,
+=======
+                                  child: Text('\$200' ,
+>>>>>>> origin/event
                                     style: TextStyle(color: Colors.white , fontWeight: FontWeight.bold ),),
                                 ),
 
@@ -445,6 +459,7 @@ class TicketTypeScreen extends StatelessWidget {
 
                                   ],
                                 ),
+<<<<<<< HEAD
                                 SizedBox(width: 50,),
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -452,6 +467,15 @@ class TicketTypeScreen extends StatelessWidget {
                                     Text('Code Clouders', style: TextStyle(color: Colors.white , fontWeight: FontWeight.bold),),
                                      Text('Mass Development', style: TextStyle(color: Colors.white ,
                                         fontWeight: FontWeight.bold),)
+=======
+                                SizedBox(width: 49,),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text('Business Revolution', style: TextStyle(color: Colors.white , fontWeight: FontWeight.bold),),
+                                    /* Text('Mass Development', style: TextStyle(color: Colors.white ,
+                                        fontWeight: FontWeight.bold),)*/
+>>>>>>> origin/event
 
                                   ],)
                               ],

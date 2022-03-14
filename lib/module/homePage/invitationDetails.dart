@@ -35,6 +35,7 @@ class _InvitationDetailState extends State<InvitationDetail> {
 
   //String videoURL = "https://www.youtube.com/watch?v=9_tZFByeaxA";
   String videoURL = "https://www.youtube.com/watch?v=gnAsLyGzh_4" ;
+  String videoURL = "https://www.youtube.com/watch?v=9_tZFByeaxA";
 
   // final List<String> _ids2 = [
   //   't0Q2otsqC4I',
@@ -480,6 +481,7 @@ class _InvitationDetailState extends State<InvitationDetail> {
                               physics: NeverScrollableScrollPhysics(),
                               itemCount: agenda.length,
                               itemBuilder: (context, index) =>
+<<<<<<< HEAD
                                   InkWell(
                                     onTap: (){
                                       print('day');
@@ -497,6 +499,18 @@ class _InvitationDetailState extends State<InvitationDetail> {
 
                                       ),
                                   ),
+=======
+                                  Container(
+                                    width: 80,
+                                    height: 30,
+                                    decoration: BoxDecoration(
+                                      color: agenda[index]== agenda.first ? btnColor : HexColor('#FBFBFB'),
+                                      borderRadius: BorderRadius.circular(10)
+                                    ),
+                                    child: Center(child: Text('${agenda[index]}' , style: TextStyle(color: agenda[index]== agenda.first  ? Colors.white : Colors.grey )))
+
+                                    ),
+>>>>>>> origin/event
                               separatorBuilder: (context, index) =>
                                   SizedBox(width: 20,),
                             ),
