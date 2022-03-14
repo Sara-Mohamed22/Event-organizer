@@ -1,3 +1,4 @@
+import 'package:flutter/animation.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -5,6 +6,8 @@ import 'package:untitled1/constant.dart';
 import 'package:untitled1/model/imageModel.dart';
 import 'package:untitled1/shared/style/icon-Broken.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+
+import 'invitationDetails.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -267,7 +270,11 @@ class _HomePageState extends State<HomePage> {
                     shrinkWrap: true,
                     scrollDirection: Axis.horizontal,
                     physics: NeverScrollableScrollPhysics(),
-                    itemCount: imgs.length , itemBuilder: (context , index )=> cardItem(imgs[index])  ,
+                    itemCount: imgs.length , itemBuilder: (context , index )=> InkWell(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=> InvitationDetail()));
+                    },
+                      child: cardItem(imgs[index]))  ,
                     separatorBuilder: (context , index)=> SizedBox(width: 20,),
                   ),
                 ),
@@ -282,6 +289,7 @@ class _HomePageState extends State<HomePage> {
                 child: Text('Sponsors' , style: TextStyle(color: defColor , fontWeight: FontWeight.bold),),
               ),
               Column(
+                crossAxisAlignment: CrossAxisAlignment.start ,
                 children: [
                   SingleChildScrollView(
                     physics: BouncingScrollPhysics(),
@@ -310,6 +318,13 @@ class _HomePageState extends State<HomePage> {
                     ),
 
                   ) ,
+
+                  SizedBox(height: 20,),
+
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10.0),
+                    child: Text('Partners' , style: TextStyle(color: defColor , fontWeight: FontWeight.bold),),
+                  ),
 
                   SingleChildScrollView(
                     physics: BouncingScrollPhysics(),
